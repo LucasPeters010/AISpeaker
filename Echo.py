@@ -1,7 +1,8 @@
 print("Welcome user.")
 while True:
     data = input()
-    if (data == "quit" or data == "QUIT"):
+
+    if (data.lower().strip() == "quit"):
         print("Goodbye.")
         break
     else:
