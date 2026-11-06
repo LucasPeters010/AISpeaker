@@ -17,8 +17,21 @@ audio = audio.flatten()
 
 
 segments, info = model.transcribe(audio, language="en") 
+
+sentence = ""
+
+#Put the audio array into a string
 for segment in segments:
-    print(segment.text.strip())
+    sentence += segment.text.strip()
+    sentence += " "
+
+#Remove the extra space
+sentence = sentence.strip()
+
+if(sentence == ""):
+    print("Nothing recorded")
+else:
+    print(f"{sentence}")
 
 
 
